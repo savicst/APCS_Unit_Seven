@@ -24,8 +24,10 @@ public class ArrayListMethods {
         Scanner scan = new Scanner(System.in);
         System.out.println("Next number: ");
         ArrayList<Double> matt = new ArrayList<Double>();
-        while(scan.nextDouble() != 0) {
-            matt.add(scan.nextDouble());
+        double nextNum= scan.nextDouble();
+        while(nextNum != 0) {
+            matt.add(nextNum);
+            nextNum = scan.nextDouble();
         }
         ArrayList<Double> matthew = new ArrayList<Double>();
         matthew.add((double) matt.size());
