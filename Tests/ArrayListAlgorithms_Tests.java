@@ -60,7 +60,7 @@ public class ArrayListAlgorithms_Tests {
 
 
 
-/*
+
     @Test
     public void orderedListTest() throws FileNotFoundException {
      Scanner inputFileOne = new Scanner(new File("files/ordered_set.txt"));
@@ -72,7 +72,7 @@ public class ArrayListAlgorithms_Tests {
      assertEquals(expected, actual);
     }
 
- */
+
 
 
 

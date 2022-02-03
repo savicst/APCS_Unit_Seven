@@ -50,8 +50,16 @@ public class ArrayListAlgorithms {
         ArrayList<Integer> list = new ArrayList<>();
         while (input.hasNext()) {
             int currentNum = input.nextInt();
-            while (list.size()==0){
+            while (list.size()==0 ){
                 list.add(currentNum);
+            }
+            while (list.size() ==1){
+                if (currentNum<list.get(0)) {
+                    list.add(0, currentNum);
+                }
+                else {
+                    list.add(currentNum);
+                }
             }
             if(!list.contains(currentNum)) {
                 for(int i=0 ; i < list.size(); i++){
@@ -59,12 +67,9 @@ public class ArrayListAlgorithms {
                         list.add(i+1,currentNum);
                     }
                 }
-
             }
         }
         return list;
     }
-
-
 
 }
