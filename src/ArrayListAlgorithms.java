@@ -49,10 +49,20 @@ public class ArrayListAlgorithms {
         Scanner input = new Scanner(new File("files/set1.txt"));
         ArrayList<Integer> list = new ArrayList<>();
         while (input.hasNext()) {
+            int currentNum = input.nextInt();
+            while (list.size()==0){
+                list.add(currentNum);
+            }
+            if(!list.contains(currentNum)) {
+                for(int i=0 ; i < list.size(); i++){
+                    if (currentNum>list.get(i) && currentNum<list.get(i+1)){
+                        list.add(i+1,currentNum);
+                    }
+                }
 
-            if(!list.contains(input.nextInt))
-            list.add(input.nextInt());
+            }
         }
+        return list;
     }
 
 
