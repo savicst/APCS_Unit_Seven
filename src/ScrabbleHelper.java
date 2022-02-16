@@ -38,11 +38,11 @@ public class ScrabbleHelper {
     //2-1 and 2-2
     public ArrayList<String> findMatches(String pattern){
         ArrayList<String> matches = new ArrayList<String>();
-         for (int i=0;i<wordList.size(); i++){
-             if (wordList.get(i).indexOf(pattern) >=0){
-                 matches.add(wordList.get(i));
-             }
-         }
+        for (String s : wordList) {
+            if (s.indexOf(pattern) >= 0) {
+                matches.add(s);
+            }
+        }
          return matches;
     }
     //2-4
@@ -54,8 +54,44 @@ public class ScrabbleHelper {
                     minIndex = k;
                 }
             }
-            int temp =
+            String temp = unsorted.get(j);
+            unsorted.set(j, unsorted.get(minIndex));
+            unsorted.set(minIndex, temp);
+
+        }
+    }
+    public ArrayList<String> cheatScrabble(String tiles) {
+
+        ArrayList<String> theWords = new ArrayList<String>();
+
+        for (String s: wordList) {
+            boolean canMakeWord = true;
+            ArrayList<Character> letters = new ArrayList<Character>();
+            for (int j = 0; j < tiles.length(); j++) {
+                letters.add(tiles.charAt(j));
+            }
+            for (int k=0; k<s.length(); k++){
+                if (letters.contains(s.charAt(k))){
+                    letters.remove(letters.indexOf(s.charAt(k)));
+                }
+                else{
+                    canMakeWord = false;
+                    break;
+                }
+            }
+            if(canMakeWord){
+                theWords.add(s);
+            }
+        }
+        return theWords;
+    }
+    //4
+    public int getScores(String word){
+        int[] scores = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
+        for(int i= 0; i<word.length(); i++){
+            int value = word.charAt(i)
         }
     }
 }
+
 

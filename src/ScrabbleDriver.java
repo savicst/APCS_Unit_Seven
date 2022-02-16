@@ -27,8 +27,12 @@ public class ScrabbleDriver {
         //2-3
         ArrayList<String> matched = matthias.findMatches("for");
         System.out.println(matched);
+        //2-5
         matthias.sortWords(matched);
         System.out.println(matched);
+        //3-7
+        System.out.println(matthias.cheatScrabble("annery"));
+
     }
 
 
