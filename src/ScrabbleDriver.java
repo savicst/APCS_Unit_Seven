@@ -31,8 +31,14 @@ public class ScrabbleDriver {
         matthias.sortWords(matched);
         System.out.println(matched);
         //3-7
-        System.out.println(matthias.cheatScrabble("annery"));
-
+        ArrayList<String> sortedCheat = matthias.cheatScrabble("annery");
+        System.out.println(sortedCheat);
+        //4-2
+        System.out.println(matthias.getScores("bird"));
+        System.out.println(matthias.getScores("quiz"));
+        //4-4
+        matthias.sortByScores(sortedCheat);
+        System.out.println(sortedCheat);
     }
 
 

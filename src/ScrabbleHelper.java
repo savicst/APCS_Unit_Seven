@@ -88,9 +88,23 @@ public class ScrabbleHelper {
     //4
     public int getScores(String word){
         int[] scores = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
+        int wordScore = 0;
         for(int i= 0; i<word.length(); i++){
-            int value = word.charAt(i)
+            int value = scores[word.charAt(i) - 'a'];
+            wordScore += value;
         }
+        return wordScore;
+    }
+    public void sortByScores(ArrayList<String> list){
+         for( int j=1; j<list.size();j++){
+             int temp = getScores(list.get(j));
+             int possibleIndex = j;
+             while ( possibleIndex>0 && temp > getScores(list.get(possibleIndex - 1))){
+                 list.set(possibleIndex, list.get(possibleIndex-1));
+                 possibleIndex--;
+             }
+             list.set(possibleIndex,list.get(j));
+         }
     }
 }
 
