@@ -97,13 +97,13 @@ public class ScrabbleHelper {
     }
     public void sortByScores(ArrayList<String> list){
          for( int j=1; j<list.size();j++){
-             int temp = getScores(list.get(j));
+             String temp = list.get(j);
              int possibleIndex = j;
-             while ( possibleIndex>0 && temp > getScores(list.get(possibleIndex - 1))){
+             while ( possibleIndex>0 && getScores(temp) > getScores(list.get(possibleIndex - 1))){
                  list.set(possibleIndex, list.get(possibleIndex-1));
                  possibleIndex--;
              }
-             list.set(possibleIndex,list.get(j));
+             list.set(possibleIndex,temp);
          }
     }
 }
